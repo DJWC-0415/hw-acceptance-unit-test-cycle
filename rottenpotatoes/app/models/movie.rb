@@ -8,6 +8,6 @@ class Movie < ActiveRecord::Base
     if director.blank?
       return nil
     end
-    return Movie.where(director: director).pluck(:title)
+    Movie.where(director: director).pluck(:title)
   end
 end
