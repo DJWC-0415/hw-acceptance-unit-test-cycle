@@ -8,6 +8,10 @@ describe Movie do
     @movie_4 = Movie.create(title: 'Everything Before Us')
   end
   
+  it 'should be able to return all ratings' do
+    expect(Movie.all_ratings).to eql(['G', 'PG', 'PG-13', 'NC-17', 'R'])
+  end
+  
   it 'should find movies by the same director' do
     expect(Movie.movies_by_same_director(@movie_1.title)).to eql(['Interstellar', 'Dunkirk'])
     expect(Movie.movies_by_same_director(@movie_2.title)).to eql(['Interstellar', 'Dunkirk'])
